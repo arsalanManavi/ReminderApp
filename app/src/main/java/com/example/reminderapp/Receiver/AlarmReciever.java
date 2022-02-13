@@ -93,9 +93,9 @@ public class AlarmReciever extends BroadcastReceiver {
             notificationManager.createNotificationChannel(notificationChannel);
             notificationCompat.setChannelId(channelId);
         }
-        int id = 0;
+        int random = new Random().nextInt(1000);
 
-        notificationManagerCompat.notify(id++, notificationCompat.build());
+        notificationManagerCompat.notify(random, notificationCompat.build());
 
 
 
