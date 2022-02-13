@@ -43,7 +43,7 @@ public class AlarmReciever extends BroadcastReceiver {
     public static String KEY_TIME = "t";
     public static final String channelId = "reminder";
     String title, desc, date, time;
-    // MediaPlayer mediaPlayer;
+
 
 
     @Override
@@ -96,8 +96,7 @@ public class AlarmReciever extends BroadcastReceiver {
         int id = 0;
 
         notificationManagerCompat.notify(id++, notificationCompat.build());
-        //mediaPlayer = MediaPlayer.create(context,R.raw.alarm);
-        // mediaPlayer.start();
+
 
 
     }
