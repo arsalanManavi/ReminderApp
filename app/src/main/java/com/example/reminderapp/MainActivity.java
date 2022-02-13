@@ -25,6 +25,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.reminderapp.Receiver.AlarmReciever;
 import com.example.reminderapp.adapter.MainAdapter;
@@ -164,13 +165,19 @@ public class MainActivity extends AppCompatActivity {
 
     private void showTimePicker(EditText time) {
         Calendar calendar = Calendar.getInstance();
+        Calendar currentTime = Calendar.getInstance();
         TimePickerDialog.OnTimeSetListener listener = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
                 calendar.set(Calendar.MINUTE, minute);
-                time.setText(String.format("%02d:%02d", hourOfDay, minute));
-                //                 time.setText(hourOfDay+":"+minute);
+                if (calendar.getTimeInMillis()>currentTime.getTimeInMillis()){
+                    time.setText(String.format("%02d:%02d", hourOfDay, minute));
+
+                }else if (calendar.getTimeInMillis()==currentTime.getTimeInMillis()){
+                    Toast.makeText(MainActivity.this, "Do you want to remind you right know? for real?", Toast.LENGTH_SHORT).show();
+                }else
+                    Toast.makeText(MainActivity.this, "invalid time", Toast.LENGTH_SHORT).show();
 
             }
         };
