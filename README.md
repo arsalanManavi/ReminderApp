@@ -9,6 +9,8 @@
  - Live data
  - Room database
  - AlarmManager for scheduling time
+ - notification
  - broadcast receiver
  - some ui elements like RecyclerView,... 
+ - DatePicker and TimePicker
  
