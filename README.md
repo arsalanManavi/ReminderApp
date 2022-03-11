@@ -1,8 +1,8 @@
 # ReminderApp
  This is beta-version of this app and also this is my first experience of Mvvm architecture 
- 
- I'm working on it and I will add some features for sure
- 
+
+ I'm working on it and I will add some features for sure. 
+ This app work only on English language
  Here what I use to create this app
 
  - Mvvm architecture 
